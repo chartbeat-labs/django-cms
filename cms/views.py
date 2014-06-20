@@ -57,7 +57,8 @@ def details(request, slug):
         not hasattr(request, 'toolbar') or (
             not request.toolbar.edit_mode and
             not request.toolbar.show_toolbar and
-            not request.user.is_authenticated()
+            (not request.user.is_authenticated() or
+             get_cms_setting("CACHE_WHEN_LOGGED_IN"))
         )
     ):
         cache_content = cache.get(
