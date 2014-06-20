@@ -56,6 +56,7 @@ Have a look at the following settings to enable/disable various caching behavior
 - :setting:`CMS_PAGE_CACHE`
 - :setting:`CMS_PLACEHOLDER_CACHE`
 - :setting:`CMS_PLUGIN_CACHE`
+- :setting:`CMS_CACHE_WHEN_LOGGED_IN`
 
 
 

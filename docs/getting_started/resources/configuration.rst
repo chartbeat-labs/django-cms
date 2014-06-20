@@ -751,7 +751,8 @@ CMS_PAGE_CACHE
 Default: ``True``
 
 Should the output of pages be cached?
-Takes the language, and timezone into account. Pages for logged in users are not cached.
+Takes the language, and timezone into account. Pages for logged in users are not
+cached by default (see :setting:`CMS_CACHE_WHEN_LOGGED_IN`)
 If the toolbar is visible the page is not cached as well.
 
 
@@ -777,6 +778,15 @@ Default value of the ``cache`` attribute of plugins. Should plugins be cached by
 
 .. warning::
     If you disable the plugin cache be sure to restart the server and clear the cache afterwards.
+
+.. setting:: CMS_CACHE_WHEN_LOGGED_IN
+
+CMS_CACHE_WHEN_LOGGED_IN
+==============
+
+Default: ``False``
+
+Should the output of pages be cached for authenticated users?
 
 .. setting:: CMS_MAX_PAGE_PUBLISH_REVERSIONS
 
