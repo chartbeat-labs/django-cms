@@ -141,21 +141,6 @@ class PluginPool(object):
                 splitter = '%s_' % model._meta.app_label
                 table_name = model._meta.db_table
 
-                #
-                # Checks to see if this plugin's model's table's name is
-                # properly named with the app_label as the prefix (not
-                # 'cmsplugin')
-                #
-                if (table_name not in table_names and splitter in table_name):
-                    proper_table_name = table_name
-                    splitted = table_name.split(splitter, 1)
-                    bad_table_name = 'cmsplugin_%s' % splitted[1]
-                    if bad_table_name in table_names:
-                        model._meta.db_table = bad_table_name
-                        warnings.warn(
-                            'please rename the table "%s" to "%s" in %s\nThe compatibility code will be removed in 3.1' % (
-                                bad_table_name, proper_table_name, model._meta.app_label), DeprecationWarning)
-
                 for att_name in model.__dict__.keys():
                     att = model.__dict__[att_name]
 
