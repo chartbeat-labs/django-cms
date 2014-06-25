@@ -121,9 +121,6 @@ class BasicToolbar(CMSToolbar):
                 # admin
         admin_menu.add_sideframe_item(_('Administration'), url=reverse('admin:index'))
         admin_menu.add_break(ADMINISTRATION_BREAK)
-        # cms users
-        admin_menu.add_sideframe_item(_('User settings'), url=reverse('admin:cms_usersettings_change'))
-        admin_menu.add_break(USER_SETTINGS_BREAK)
         # logout
         # If current page is not published or has view restrictions user is
         # redirected to the home page:
